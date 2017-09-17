@@ -1,15 +1,17 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const NODE_ENV = process.env.NODE_ENV || 'development';
+
 module.exports = {
     entry: './app/client/index.js',
     output: {
         path: __dirname + '/public',
         filename: 'bundle.js'
     },
-    // resolve: {
-    //     extensions: ['.js', '.jsx']
-    // },
+    resolve: {
+        extensions: ['.js', '.jsx']
+    },
     module: {
         loaders: [
             {
@@ -27,23 +29,49 @@ module.exports = {
                     'file?hash=sha512&digest=hex&name=[hash].[ext]',
                     'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
                 ]
+            },
+            {
+                test: /\.html$/,
+                loader: 'html-loader'
+            },
+            {   test: /\.css$/,
+                loader: 'style-loader!css-loader'
             }
         ]
     },
     plugins: [
         new webpack.DefinePlugin({
             "process.env": {
-                NODE_ENV: JSON.stringify("production")
+                NODE_ENV: process.env.NODE_ENV
             }
         }),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: true
-            }
-        }),
+        new webpack.NoErrorsPlugin(),
         new HtmlWebpackPlugin({
             template: './app/client/index.html',
             inject: "body"
-        })
-    ]
+        }),
+    ],
+    watch: NODE_ENV == 'development',
+    watchOptions: {
+        aggregateTimeout: 100
+    },
+    devtool: NODE_ENV == 'development' ? "inline-source-map" : null,
 };
+
+if (NODE_ENV == 'production') {
+    module.exports.plugins.push(
+        new webpack.optimize.UglifyJsPlugin({
+            beautify: false,
+            comments: false,
+            compress: {
+                sequences     : true,
+                booleans      : true,
+                loops         : true,
+                unused      : true,
+                warnings    : false,
+                drop_console: true,
+                unsafe      : true
+            }
+        })
+    );
+}

@@ -1,14 +1,12 @@
 import React from 'react';
-import {
-    Router,
-    Route,
-    browserHistory
-} from 'react-router';
+import { Switch, Route, BrowserRouter } from 'react-router-dom'
+import Home from './components/home'
 
-import Home from './components/home';
 
-export default () => (
-    <Router history={browserHistory}>
-        <Route path='/' component={Home} />
-    </Router>
+const Main = () => (
+    <BrowserRouter>
+        <Home/>
+    </BrowserRouter>
 );
+
+export default Main;

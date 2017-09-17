@@ -1,4 +1,5 @@
 var express = require('express');
+var path = require('path');
 const PORT = 7700;
 const PUBLIC_PATH = __dirname + '/public';
 

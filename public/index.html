@@ -1,97 +1,10 @@
-Html Webpack Plugin:
-<pre>
-  Error: Child compilation failed:
-  Module build failed: SyntaxError: D:/Nika/React_Tasks/app/client/index.html: Expected corresponding JSX closing tag for <meta> (6:0)
-    4 |     <meta charset="UTF-8">
-    5 |     <title>SPA</title>
-  > 6 | </head>
-      | ^
-    7 | <body>
-    8 | <div id="app"></div>
-    9 | <script type="text/javascript" src="bundle.js"></script></body>
-  :
-  BabelLoaderError: SyntaxError: D:/Nika/React_Tasks/app/client/index.html: Expected corresponding JSX closing tag for <meta> (6:0)
-    4 |     <meta charset="UTF-8">
-    5 |     <title>SPA</title>
-  > 6 | </head>
-      | ^
-    7 | <body>
-    8 | <div id="app"></div>
-    9 | </body>
-  
-  - compiler.js:76 
-    [React_Tasks]/[html-webpack-plugin]/lib/compiler.js:76:16
-  
-  - Compiler.js:304 compile
-    [React_Tasks]/[webpack]/lib/Compiler.js:304:11
-  
-  - Compiler.js:520 applyPluginsAsync.err
-    [React_Tasks]/[webpack]/lib/Compiler.js:520:14
-  
-  - Tapable.js:202 next
-    [React_Tasks]/[tapable]/lib/Tapable.js:202:11
-  
-  - CachePlugin.js:62 Compiler.<anonymous>
-    [React_Tasks]/[webpack]/lib/CachePlugin.js:62:5
-  
-  - Tapable.js:206 Compiler.applyPluginsAsyncSeries
-    [React_Tasks]/[tapable]/lib/Tapable.js:206:13
-  
-  - Compiler.js:517 compilation.seal.err
-    [React_Tasks]/[webpack]/lib/Compiler.js:517:11
-  
-  - Tapable.js:195 Compilation.applyPluginsAsyncSeries
-    [React_Tasks]/[tapable]/lib/Tapable.js:195:46
-  
-  - Compilation.js:671 self.applyPluginsAsync.err
-    [React_Tasks]/[webpack]/lib/Compilation.js:671:19
-  
-  - Tapable.js:195 Compilation.applyPluginsAsyncSeries
-    [React_Tasks]/[tapable]/lib/Tapable.js:195:46
-  
-  - Compilation.js:662 self.applyPluginsAsync.err
-    [React_Tasks]/[webpack]/lib/Compilation.js:662:11
-  
-  - Tapable.js:202 next
-    [React_Tasks]/[tapable]/lib/Tapable.js:202:11
-  
-  - index.js:244 Compilation.<anonymous>
-    [React_Tasks]/[uglifyjs-webpack-plugin]/dist/index.js:244:6
-  
-  - Tapable.js:206 Compilation.applyPluginsAsyncSeries
-    [React_Tasks]/[tapable]/lib/Tapable.js:206:13
-  
-  - Compilation.js:657 self.applyPluginsAsync.err
-    [React_Tasks]/[webpack]/lib/Compilation.js:657:10
-  
-  - Tapable.js:195 Compilation.applyPluginsAsyncSeries
-    [React_Tasks]/[tapable]/lib/Tapable.js:195:46
-  
-  - Compilation.js:653 sealPart2
-    [React_Tasks]/[webpack]/lib/Compilation.js:653:9
-  
-  - Tapable.js:195 Compilation.applyPluginsAsyncSeries
-    [React_Tasks]/[tapable]/lib/Tapable.js:195:46
-  
-  - Compilation.js:596 Compilation.seal
-    [React_Tasks]/[webpack]/lib/Compilation.js:596:8
-  
-  - Compiler.js:514 applyPluginsParallel.err
-    [React_Tasks]/[webpack]/lib/Compiler.js:514:17
-  
-  - Tapable.js:289 
-    [React_Tasks]/[tapable]/lib/Tapable.js:289:11
-  
-  - Compilation.js:498 _addModuleChain
-    [React_Tasks]/[webpack]/lib/Compilation.js:498:11
-  
-  - Compilation.js:468 processModuleDependencies.err
-    [React_Tasks]/[webpack]/lib/Compilation.js:468:14
-  
-  - next_tick.js:131 _combinedTickCallback
-    internal/process/next_tick.js:131:7
-  
-  - next_tick.js:180 process._tickCallback
-    internal/process/next_tick.js:180:9
-  
-</pre>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SPA</title>
+</head>
+<body>
+<div id="app"></div>
+<script type="text/javascript" src="bundle.js"></script></body>
+</html>
