@@ -51,14 +51,14 @@ module.exports = {
             inject: "body"
         }),
     ],
-    watch: NODE_ENV == 'development',
+    watch: NODE_ENV.trim() == 'development',
     watchOptions: {
         aggregateTimeout: 100
     },
-    devtool: NODE_ENV == 'development' ? "inline-source-map" : null,
+    devtool:  NODE_ENV.trim() == 'development' ? "inline-source-map" : null,
 };
 
-if (NODE_ENV == 'production') {
+if (NODE_ENV.trim() == 'production') {
     module.exports.plugins.push(
         new webpack.optimize.UglifyJsPlugin({
             beautify: false,
