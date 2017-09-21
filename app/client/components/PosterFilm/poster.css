@@ -1,0 +1,26 @@
+.film-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.film-info span{
+    font-size: 12px;
+}
+
+.film-inform{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 5px;
+}
+
+.film-inform span:first-child{
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.film-inform span:last-child{
+    border: 1px solid gray;
+    padding: 2px;
+}

@@ -1,0 +1,60 @@
+.move-description-part{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px 40px;
+}
+
+.poster-image{
+    width: 200px;
+    height: 270px;
+}
+
+.description-part{
+    position: relative;
+}
+
+.description-part h2{
+    color: rgb(251, 99, 98);
+    margin-bottom: 15px;
+}
+
+.raiting{
+    position: absolute;
+    left: 140px;
+    top: -3px;
+    font-size: 12px;
+    color: lemonchiffon;
+    padding: 8px;
+    border-radius: 50%;
+    border: 2px solid lemonchiffon;
+}
+.category{
+    font-size: 14px;
+    color: white;
+    padding-bottom: 15px;
+}
+
+.runtime-and-release-year span{
+    display: inline-block;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.description{
+    font-size: 14px;
+    padding: 20px 0;
+    width: 400px;
+    color: white;
+}
+
+.director-and-cast p{
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: white;
+    width: 400px;
+}
+

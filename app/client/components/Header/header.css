@@ -1,0 +1,31 @@
+.header{
+    flex: 1 0 auto;
+}
+.fond-image {
+    background-image: url("http://qubemedia.net/wp-content/uploads/2015/04/book-film-holiday.jpg");
+    background-size: cover;
+}
+
+.fond-image h4{
+    color: rgb(251, 99, 98);
+    text-align: left;
+    padding: 20px 0 0 40px;
+}
+
+.result-panel {
+    background-color: rgb(202, 218, 186);
+    height: 40px;
+}
+
+.search-button-move{
+    color: rgb(251, 99, 98);
+    padding: 10px 20px;
+    background-color: white;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 335px;
+    top: 10px;
+    border-radius: 5px;
+}

@@ -1,0 +1,71 @@
+.search-form{
+    padding: 20px 40px;
+}
+.search-title {
+    color: white;
+    padding-bottom: 15px;
+}
+
+.search-field {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid rgb(251, 99, 98);
+    background-color: black;
+    padding: 10px 0 10px 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: white;
+}
+
+.search-part{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.radios-as-buttons{
+    display: flex;
+    flex-direction: row;
+}
+
+.radios-as-buttons input{
+   position: absolute;
+   left: -99999px;
+}
+
+.radios-as-buttons label {
+    background-color: rgb(59,68,75);
+    padding: 5px 10px;
+    margin-left: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.radios-as-buttons input[type=radio]:checked ~ label {
+    background-color: rgb(251, 99, 98);
+}
+
+.radios-as-buttons label:hover {
+    color: #FFFFFF;
+}
+
+.search-by-title {
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 5px 0;
+}
+
+.search-button{
+    background-color: rgb(251, 99, 98);
+    padding: 5px 40px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
