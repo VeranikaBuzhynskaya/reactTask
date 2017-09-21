@@ -13,29 +13,35 @@ module.exports = {
         extensions: ['.js', '.jsx']
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /.(jsx|js)?$/,
-                loader: 'babel-loader',
                 exclude: /node_modules/,
-                query: {
-                    presets: ['es2015', 'react']
-
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['es2015', 'react']
+                    }
                 }
             },
             {
-                test: /\.(jpe?g|png|gif|svg)$/i,
-                loaders: [
-                    'file?hash=sha512&digest=hex&name=[hash].[ext]',
-                    'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
                 ]
             },
             {
-                test: /\.html$/,
-                loader: 'html-loader'
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [
+                    'file-loader'
+                ]
             },
-            {   test: /\.css$/,
-                loader: 'style-loader!css-loader'
+            {
+                test: /\.(html)$/,
+                use: {
+                    loader: 'html-loader',
+                },
             }
         ]
     },
@@ -45,7 +51,7 @@ module.exports = {
                 NODE_ENV: process.env.NODE_ENV
             }
         }),
-        new webpack.NoErrorsPlugin(),
+        new webpack.NoEmitOnErrorsPlugin(),
         new HtmlWebpackPlugin({
             template: './app/client/index.html',
             inject: "body"

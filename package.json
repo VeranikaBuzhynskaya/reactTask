@@ -6,6 +6,7 @@
   "scripts": {
     "build-dev": "SET NODE_ENV=development && webpack",
     "build-prod": "SET NODE_ENV=production && webpack",
+    "start": "webpack && node server",
     "test": "jest"
   },
   "author": "",
@@ -27,6 +28,8 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^0.11.2",
     "html-loader": "^0.5.1",
     "html-webpack-plugin": "^2.30.1",
     "image-webpack-loader": "^3.4.2",
