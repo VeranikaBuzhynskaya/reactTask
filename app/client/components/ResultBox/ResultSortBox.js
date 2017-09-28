@@ -1,7 +1,7 @@
 import React from 'react';
 import './resultBox.css';
 
-class ResultBox extends React.Component{
+class ResultSortBox extends React.Component{
     render(){
         return (
             <div className="sort-part">
@@ -22,4 +22,4 @@ class ResultBox extends React.Component{
     }
 }
 
-export default ResultBox;
+export default ResultSortBox;

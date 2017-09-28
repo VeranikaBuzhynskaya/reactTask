@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import MoveDescription from '../MoveDescription/MoveDescription';
-import ResultDirectorBox from '../ResultDirectorBox/ResultDirectorBox';
+import ResultDirectorBox from '../ResultBox/ResultDirectorBox';
 import './header.css';
 
 class HeaderFilm extends React.Component{
@@ -11,7 +12,9 @@ class HeaderFilm extends React.Component{
                     <h4>
                         netflixroulette
                     </h4>
-                    <input type="button" value="SEARCH" className="search-button-move"/>
+                    <Link to='/'>
+                        <input type="button" value="SEARCH" className="search-button-move"/>
+                    </Link>
                     <MoveDescription/>
                 </div>
                 <div className="result-panel">

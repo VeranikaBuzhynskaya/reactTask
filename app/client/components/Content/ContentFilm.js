@@ -32,9 +32,8 @@ class ContentFilm extends React.Component{
         return (
             <div className="content">
                 {
-                    FilmAPI.all().filter(p =>{
-                        return p.name.indexOf(this.props.match.params.query) !== -1
-                    }).map(p => (
+                    FilmAPI.all().filter(p => p.name.indexOf(this.props.match.params.query) !== -1)
+                        .map(p => (
                         <Poster info={p} key={p.number} />
                     ))
                 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../ResultBox/resultBox.css';
+import './resultBox.css';
 
 class ResultDirectorBox extends React.Component{
     render(){

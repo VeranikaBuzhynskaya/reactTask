@@ -20,3 +20,9 @@
     flex: 0 1 auto;
     margin-right: 20px;
 }
+
+.notFoundFilm {
+    margin: 0 auto;
+    font-size: 40px;
+    color: lightgrey;
+}

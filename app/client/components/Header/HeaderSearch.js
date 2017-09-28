@@ -1,6 +1,8 @@
 import React from 'react';
 import SearchBox from '../SearchBox/SearchBox';
-import ResultBox from '../ResultBox/ResultBox';
+import ResultBox from '../ResultBox/ResultSortBox';
+import NoResultBox from '../ResultBox/NoResultBox';
+import { Switch, Route } from 'react-router-dom'
 import './header.css';
 
 class HeaderSearch extends React.Component{
@@ -15,7 +17,10 @@ class HeaderSearch extends React.Component{
                     <SearchBox />
                 </div>
                 <div className="result-panel">
-                    <ResultBox/>
+                    <Switch>
+                        <Route exact path='/' component={NoResultBox}/>
+                        <Route path='/search' component={ResultBox}/>
+                    </Switch>
                 </div>
             </div>
         );
