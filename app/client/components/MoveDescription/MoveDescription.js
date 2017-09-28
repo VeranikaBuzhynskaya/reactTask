@@ -5,7 +5,7 @@ class MoveDescription extends React.Component{
     render(){
         return (
             <div className="move-description-part">
-                <img className="poster-image" src="http://netflixroulette.net/api/posters/880640.jpg" alert="poster"/>
+                <img className="poster-image" src="http://netflixroulette.net/api/posters/880640.jpg"/>
                 <div className="description-part">
                     <h2>Pulp Fiction</h2>
                     <span className="raiting">4.1</span>

@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
+import App from './components/App/App';
 
-import AppRouter from './routes';
-import FirstPage from './components/FirstPage/FirstPage';
-import SecondPage from './components/SecondPage/SecondPage';
-
-ReactDOM.render(<SecondPage />, document.getElementById("app"));
+ReactDOM.render((
+    <Router>
+        <App />
+    </Router>
+), document.getElementById("app"));

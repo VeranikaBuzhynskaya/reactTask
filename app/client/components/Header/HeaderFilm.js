@@ -1,9 +1,9 @@
 import React from 'react';
 import MoveDescription from '../MoveDescription/MoveDescription';
 import ResultDirectorBox from '../ResultDirectorBox/ResultDirectorBox';
-import '../Header/header.css';
+import './header.css';
 
-class Header2 extends React.Component{
+class HeaderFilm extends React.Component{
     render(){
         return (
             <div className="header">
@@ -22,4 +22,4 @@ class Header2 extends React.Component{
     }
 }
 
-export default Header2;
+export default HeaderFilm;

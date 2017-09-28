@@ -2,9 +2,9 @@ import React from 'react';
 import Header from '../Header/Header';
 import Content from '../Content/Content';
 import Footer from '../Footer/Footer';
-import './firstPage.css';
+import './app.css';
 
-class FirstPage extends React.Component{
+class App extends React.Component{
     render(){
         return (
             <div className="wrapper">
@@ -16,4 +16,4 @@ class FirstPage extends React.Component{
     }
 }
 
-export default FirstPage;
+export default App;
