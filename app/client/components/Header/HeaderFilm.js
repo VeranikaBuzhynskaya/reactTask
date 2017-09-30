@@ -8,7 +8,8 @@ class HeaderFilm extends React.Component{
     render(){
         return (
             <div className="header">
-                <div className="fond-image">
+                <div className="header-part">
+                    <div className="fond-image"></div>
                     <h4>
                         netflixroulette
                     </h4>

@@ -6,13 +6,14 @@
     align-items: flex-start;
     align-content: flex-start;
     flex: 1 0 auto;
+    padding: 0 10px 20px 10px;
 }
 
 .imageBlock {
     display: block;
     height: 200px;
     width: 150px;
-    background-color: aquamarine;
+    background-color: lavender;
 }
 
 .poster {
@@ -24,5 +25,6 @@
 .notFoundFilm {
     margin: 0 auto;
     font-size: 40px;
-    color: lightgrey;
+    color: rgb(210,210,210);
+    align-self: center;
 }

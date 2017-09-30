@@ -1,5 +1,5 @@
 .search-form{
-    padding: 20px 40px;
+    padding: 20px 80px;
 }
 .search-title {
     color: white;
@@ -43,6 +43,7 @@
     font-size: 12px;
     cursor: pointer;
     text-transform: uppercase;
+    border-radius: 1px;
 }
 
 .radios-as-buttons input[type=radio]:checked ~ label {
@@ -68,4 +69,5 @@
     font-size: 14px;
     border: none;
     cursor: pointer;
+    border-radius: 1px;
 }

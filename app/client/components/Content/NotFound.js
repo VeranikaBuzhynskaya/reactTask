@@ -6,7 +6,7 @@ class NotFound extends React.Component{
         return (
             <div className="content">
                 <p className="notFoundFilm">
-                    Not films found
+                    No films found
                 </p>
             </div>
         );

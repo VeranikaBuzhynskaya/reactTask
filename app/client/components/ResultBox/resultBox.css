@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 10px 40px;
+    padding: 10px 80px;
 }
 .count-movies, .sort-by-title, .sort-director {
     color: rgb(59,68,75);
@@ -22,10 +22,10 @@
 }
 
 .radios-as-text label {
-    color: lightgrey;
+    color: rgb(59,68,75);
     margin-left: 10px;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 14px;
     cursor: pointer;
 }
 

@@ -17,7 +17,7 @@ class Poster extends React.Component{
                         <span>{info.releaseDate}</span>
                     </div>
                     <div>
-                        <span>{info.genre}</span>
+                        <span className="genre">{info.genre}</span>
                     </div>
                 </div>
             </div>

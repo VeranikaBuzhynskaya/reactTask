@@ -1,17 +1,18 @@
 .film-info{
     display: flex;
     flex-direction: column;
+    font-size: 12px
 }
 
-.film-info span{
-    font-size: 12px;
+.film-info .genre{
+    color: rgb(140,140,140);
 }
 
 .film-inform{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-top: 5px;
+    padding: 10px 0 5px 0;
 }
 
 .film-inform span:first-child{
@@ -23,4 +24,5 @@
 .film-inform span:last-child{
     border: 1px solid gray;
     padding: 2px;
+    font-size: 10px;
 }
