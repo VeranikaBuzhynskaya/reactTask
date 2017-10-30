@@ -16,13 +16,14 @@
 }
 
 .film-inform span:first-child{
-    font-size: 14px;
+    font-size: 12px;
+    width: 100px;
     font-weight: bold;
     text-transform: uppercase;
 }
 
 .film-inform span:last-child{
-    border: 1px solid gray;
+    /*border: 1px solid gray;*/
     padding: 2px;
     font-size: 10px;
 }

@@ -21,12 +21,10 @@
 }
 
 .raiting{
-    position: absolute;
-    left:  170px;
-    top: -3px;
+    display: inline-block;
     font-size: 12px;
     color: lemonchiffon;
-    padding: 8px;
+    padding: 8px 10px;
     border-radius: 50%;
     border: 2px solid lemonchiffon;
 }

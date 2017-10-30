@@ -8,7 +8,7 @@ const Header = () => (
         <Switch>
             <Route exact path='/' component={HeaderSearch}/>
             <Route path='/search' component={HeaderSearch}/>
-            <Route path='/film/:name' component={HeaderFilm}/>
+            <Route path='/film/:query' component={HeaderFilm}/>
         </Switch>
     </header>
 );
