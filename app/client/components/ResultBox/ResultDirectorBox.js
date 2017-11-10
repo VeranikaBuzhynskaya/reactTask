@@ -5,7 +5,7 @@ class ResultDirectorBox extends React.Component{
     render(){
         return (
             <div className="sort-part">
-                <p className="sort-director">Quentin Tarantino</p>
+                <p className="sort-director">Similar films</p>
             </div>
         );
     }

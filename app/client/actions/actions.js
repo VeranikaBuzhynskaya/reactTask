@@ -8,6 +8,7 @@ export const RECIEVE_FILMS = "RECIEVE_FILMS";
 export const SELECT_FILMS = "SELECT_FILMS";
 export const SELECT_SEARCH_TYPE = "SELECT_SEARCH_TYPE";
 export const RECIEVE_UNIQUE_FILM = "RECIEVE_UNIQUE_FILM";
+export const RECIEVE_SIMILAR_FILMS = "RECIEVE_SIMILAR_FILMS";
 
 function fetchFilms (url, dispatch){
     fetch(url)
@@ -23,6 +24,14 @@ function fetchUniqueFilm (url, dispatch){
     // todo catch
 }
 
+function fetchSimilarFilms (url, dispatch){
+    fetch(url)
+        .then(response => response.json())
+        .then(json => dispatch(receiveSimilarFilms(json.results)));
+    // todo catch
+}
+
+
 export function searchFilms (query){
     return (dispatch, getState) => {
         const searchType = getState().storeFilms.searchType;
@@ -34,6 +43,13 @@ export function findFilm(id){
     return (dispatch, getState) => {
         const searchType = getState().storeFilms.searchType;
         fetchUniqueFilm(`${path}${searchType}/${id}?${key}`, dispatch);
+    }
+}
+
+export function findSimilarFilms(id){
+    return (dispatch, getState) => {
+        const searchType = getState().storeFilms.searchType;
+        fetchSimilarFilms(`${path}${searchType}/${id}/similar?${key}&page=1`, dispatch);
     }
 }
 
@@ -58,7 +74,14 @@ function receiveUniqueFilm(film) {
     }
 }
 
-function sortFilms(sortBy) {
+function receiveSimilarFilms(filmsSimilar) {
+    return {
+        type: RECIEVE_SIMILAR_FILMS,
+        filmsSimilar: filmsSimilar
+    }
+}
+
+export function sortFilms(sortBy) {
   return {
     type: SORT_FILMS,
     sortBy

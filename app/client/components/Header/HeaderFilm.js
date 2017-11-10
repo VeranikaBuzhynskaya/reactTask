@@ -13,7 +13,7 @@ class HeaderFilm extends React.Component{
                     <h4>
                         netflixroulette
                     </h4>
-                    <Link to='/'>
+                    <Link to='/search'>
                         <input type="button" value="SEARCH" className="search-button-move"/>
                     </Link>
                     <MoveDescription/>

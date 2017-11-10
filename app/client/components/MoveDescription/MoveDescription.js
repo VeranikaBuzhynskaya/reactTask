@@ -20,7 +20,6 @@ class MoveDescription extends React.Component{
     }
 
     render(){
-        console.log(this.props.info);
         const info = this.props.info;
         return (
             <div className="move-description-part">
@@ -28,15 +27,15 @@ class MoveDescription extends React.Component{
                 info.poster_path : 'https://www.beddingwarehouse.com.au/wp-content/uploads/2016/01/placeholder-featured-image-600x600.png'}/>
                 <div className="description-part">
                     <h2>{info.title}</h2>
-                    <p className="description">Raiting: <span className="raiting">{info.vote_average}</span></p>
+                    <p className="raiting">Raiting: <span className="raiting-average">{info.vote_average}</span></p>
                     <div className="runtime-and-release-year">
                        <span>{info.release_date}</span>
-                       <span>{info.runtime}min</span>
+                       <span>{info.runtime} min</span>
                     </div>
                     <p className="description">
                         {info.overview}
                     </p>
-                    <div className="director-and-cast">
+                    <div className="genres-and-production-countries">
                         <p>Genres: {info.genres ? info.genres[0].name : ''}</p>
                         <p>Production countries: {info.production_countries ? info.production_countries[0].name : ''}
                         </p>

@@ -11,27 +11,19 @@ class SearchBox extends React.Component{
          this.state = {value: '',
          selectedOption: 'movie'};
 
-
          this.handleChange = this.handleChange.bind(this);
-          this.onSearchSubmit = this.onSearchSubmit.bind(this);
-        //  this.handleOptionChange = this.handleOptionChange.bind(this);
+         this.onSearchSubmit = this.onSearchSubmit.bind(this);
      }
 
      onSearchSubmit(event){
          event.preventDefault();
          this.history.push(`/search/${this.state.value}`);
          this.props.onSearchUpdate(this.state.value);
-         // searchFilms(this.state.value);
-
      }
 
      handleChange(event){
          this.setState({value: event.target.value});
      }
-
-    //  handleOptionChange(changeEvent) {
-    //     this.setState({selectedOption: changeEvent.target.id})
-    //  }
 
     render(){
         return (

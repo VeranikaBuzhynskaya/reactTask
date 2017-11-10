@@ -9,20 +9,13 @@ class Poster extends React.Component{
     constructor(props){
         super(props);
 
-        this.clickFilm = this.clickFilm.bind(this);
-    }
-
-    clickFilm(){
-        const id = this.props.match.params.id;
-        this.props.onClickFilm(id);
     }
 
     render(){
-        console.log(this.props);
         const info = this.props.info;
         return (
             <div className="poster">
-                <Link to={`/film/${info.id}`} onClick={this.clickFilm()}>
+                <Link to={`/film/${info.id}`}>
                     <img className="imageBlock"  src={info.posterImage ? 'https://image.tmdb.org/t/p/w500' +
                     info.posterImage : 'https://www.beddingwarehouse.com.au/wp-content/uploads/2016/01/placeholder-featured-image-600x600.png'}/>
                 </Link>
@@ -46,12 +39,4 @@ const mapStateToProps = function(store) {
     };
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onClickFilm: (id) => {
-            dispatch(selectFilm(id))
-        }
-    }
-};
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Poster));
+export default withRouter(connect(mapStateToProps)(Poster));

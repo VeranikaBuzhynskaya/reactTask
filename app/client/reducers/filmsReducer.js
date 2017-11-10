@@ -6,7 +6,7 @@ import {
 export default function reducer(state={
     searchType:'movie',
     films:[],
-    sortBy: 'release_date'
+    sortBy: 'releaseDate'
 }, action){
   switch (action.type){
       case SELECT_SEARCH_TYPE:{
