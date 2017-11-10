@@ -45,7 +45,7 @@ class ContentFilm extends React.Component{
         const films = ((this.props.match.url.indexOf('search') !== -1) ? this.props.films : this.props.filmsSimilar)
             .map(film => {
                 return {
-                    name: film.title,
+                    name: film.title || film.name,
                     releaseDate: film.release_date || film.first_air_date ,
                     raiting: film.vote_average,
                     posterImage: film.poster_path,

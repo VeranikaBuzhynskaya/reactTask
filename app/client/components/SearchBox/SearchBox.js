@@ -1,7 +1,7 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
-import { selectSearchType, searchFilms } from "../../actions/actions"
+import { selectSearchType, searchFilms,changeSearchQuery } from "../../actions/actions"
 import './searchBox.css';
 
 class SearchBox extends React.Component{
@@ -23,6 +23,7 @@ class SearchBox extends React.Component{
 
      handleChange(event){
          this.setState({value: event.target.value});
+         this.props.changeQuery(event.target.value);
      }
 
     render(){
@@ -63,6 +64,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     onSearchUpdate: (query) =>{
         dispatch(searchFilms(query))
+    },
+    changeQuery: (query) =>{
+        dispatch(changeSearchQuery(query))
     }
   }
 };

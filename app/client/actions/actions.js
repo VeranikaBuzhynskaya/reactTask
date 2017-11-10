@@ -9,26 +9,27 @@ export const SELECT_FILMS = "SELECT_FILMS";
 export const SELECT_SEARCH_TYPE = "SELECT_SEARCH_TYPE";
 export const RECIEVE_UNIQUE_FILM = "RECIEVE_UNIQUE_FILM";
 export const RECIEVE_SIMILAR_FILMS = "RECIEVE_SIMILAR_FILMS";
+export const CHANGE_SEARCH_QUERY = "CHANGE_SEARCH_QUERY";
 
 function fetchFilms (url, dispatch){
     fetch(url)
     .then(response => response.json())
-    .then(json => dispatch(receiveFilms(json.results)));
-    // todo catch
+    .then(json => dispatch(receiveFilms(json.results)))
+    .catch(errors => console.log("Error films ;("));
 }
 
 function fetchUniqueFilm (url, dispatch){
     fetch(url)
         .then(response => response.json())
-        .then(json => dispatch(receiveUniqueFilm(json)));
-    // todo catch
+        .then(json => dispatch(receiveUniqueFilm(json)))
+        .catch(errors => console.log("Error films ;("));
 }
 
 function fetchSimilarFilms (url, dispatch){
     fetch(url)
         .then(response => response.json())
-        .then(json => dispatch(receiveSimilarFilms(json.results)));
-    // todo catch
+        .then(json => dispatch(receiveSimilarFilms(json.results)))
+        .catch(errors => console.log("Error films ;("));
 }
 
 
@@ -71,6 +72,13 @@ function receiveUniqueFilm(film) {
     return {
         type: RECIEVE_UNIQUE_FILM,
         filmUnique: film
+    }
+}
+
+export function changeSearchQuery(query) {
+    return {
+        type: CHANGE_SEARCH_QUERY,
+        searchQuery: query
     }
 }
 
