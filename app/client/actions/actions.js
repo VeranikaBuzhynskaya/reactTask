@@ -15,21 +15,21 @@ function fetchFilms (url, dispatch){
     fetch(url)
     .then(response => response.json())
     .then(json => dispatch(receiveFilms(json.results)))
-    .catch(errors => console.log("Error films ;("));
+    .catch(errors => console.log("Error: The problem with displaying of films in accordance with the search query ;("));
 }
 
 function fetchUniqueFilm (url, dispatch){
     fetch(url)
         .then(response => response.json())
         .then(json => dispatch(receiveUniqueFilm(json)))
-        .catch(errors => console.log("Error films ;("));
+        .catch(errors => console.log("Error: Problems with displaying of the selected film ;("));
 }
 
 function fetchSimilarFilms (url, dispatch){
     fetch(url)
         .then(response => response.json())
         .then(json => dispatch(receiveSimilarFilms(json.results)))
-        .catch(errors => console.log("Error films ;("));
+        .catch(errors => console.log("Error: Problem with displaying similar movies ;("));
 }
 
 
