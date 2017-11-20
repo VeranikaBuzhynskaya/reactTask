@@ -12,21 +12,21 @@ export const RECIEVE_SIMILAR_FILMS = "RECIEVE_SIMILAR_FILMS";
 export const CHANGE_SEARCH_QUERY = "CHANGE_SEARCH_QUERY";
 
 function fetchFilms (url, dispatch){
-    fetch(url)
+    return fetch(url)
     .then(response => response.json())
     .then(json => dispatch(receiveFilms(json.results)))
     .catch(errors => console.log("Error: The problem with displaying of films in accordance with the search query ;("));
 }
 
 function fetchUniqueFilm (url, dispatch){
-    fetch(url)
+    return fetch(url)
         .then(response => response.json())
         .then(json => dispatch(receiveUniqueFilm(json)))
         .catch(errors => console.log("Error: Problems with displaying of the selected film ;("));
 }
 
 function fetchSimilarFilms (url, dispatch){
-    fetch(url)
+    return fetch(url)
         .then(response => response.json())
         .then(json => dispatch(receiveSimilarFilms(json.results)))
         .catch(errors => console.log("Error: Problem with displaying similar movies ;("));
@@ -36,29 +36,22 @@ function fetchSimilarFilms (url, dispatch){
 export function searchFilms (query){
     return (dispatch, getState) => {
         const searchType = getState().storeFilms.searchType;
-        fetchFilms(`${path}search/${searchType}?${key}&query=${query}&page=1`, dispatch);
+        return fetchFilms(`${path}search/${searchType}?${key}&query=${query}&page=1`, dispatch);
     }
 }
 
 export function findFilm(id){
     return (dispatch, getState) => {
         const searchType = getState().storeFilms.searchType;
-        fetchUniqueFilm(`${path}${searchType}/${id}?${key}`, dispatch);
+        return fetchUniqueFilm(`${path}${searchType}/${id}?${key}`, dispatch);
     }
 }
 
 export function findSimilarFilms(id){
     return (dispatch, getState) => {
         const searchType = getState().storeFilms.searchType;
-        fetchSimilarFilms(`${path}${searchType}/${id}/similar?${key}&page=1`, dispatch);
+        return fetchSimilarFilms(`${path}${searchType}/${id}/similar?${key}&page=1`, dispatch);
     }
-}
-
-function requestFilms(query) {
-  return {
-    type: REQUEST_FILMS,
-    query
-  }
 }
 
 function receiveFilms(films) {
