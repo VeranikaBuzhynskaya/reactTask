@@ -1,5 +1,5 @@
 import React from 'react';
-// import './poster.css';
+import styles from './poster.css';
 import {connect} from 'react-redux';
 import { selectFilm } from "../../actions/actions";
 import {withRouter} from 'react-router-dom';

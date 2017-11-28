@@ -3,7 +3,7 @@ import Poster from '../PosterFilm/Poster';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import { searchFilms, findSimilarFilms } from "../../actions/actions";
-// import './content.css';
+import styles from'./content.css';
  
 
 class ContentFilm extends React.Component{
@@ -17,6 +17,7 @@ class ContentFilm extends React.Component{
     }
 
     requestFilms(){
+        debugger;
         if(this.props.match.url.indexOf('search') !== -1) {
             const query = this.props.match.params.query;
             this.props.fetchFilms(query);
@@ -57,6 +58,7 @@ class ContentFilm extends React.Component{
 
 
     render(){
+        debugger;
         const films = this.serializeFilmsComponents();
 
         if(this.props.match.url.indexOf('search') !== -1){
