@@ -3,7 +3,7 @@ import Poster from '../PosterFilm/Poster';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import { searchFilms, findSimilarFilms } from "../../actions/actions";
-import './content.css';
+// import './content.css';
  
 
 class ContentFilm extends React.Component{
