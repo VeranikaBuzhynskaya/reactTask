@@ -10,14 +10,25 @@ class ContentFilm extends React.Component{
 
     constructor(props){
         super(props);
+        this.state = {query: ' '};
     }
 
-    componentWillUpdate(){
+    static fetchData(dispatch, match){
+        if(match.url.indexOf('search') !== -1) {
+            const query = match.params.query;
+            return dispatch(searchFilms(query));
+        } else {
+            const id = match.params.query;
+            return dispatch(findSimilarFilms(id));
+        }
+    }
+
+
+    componentDidMount(){
         this.requestFilms();
     }
 
     requestFilms(){
-        debugger;
         if(this.props.match.url.indexOf('search') !== -1) {
             const query = this.props.match.params.query;
             this.props.fetchFilms(query);
@@ -56,11 +67,12 @@ class ContentFilm extends React.Component{
         return films;
     }
 
-
     render(){
-        debugger;
+        if(this.props.match.params.query !== this.state.query){
+            this.setState({ query: this.props.match.params.query });
+            this.requestFilms();
+        }
         const films = this.serializeFilmsComponents();
-
         if(this.props.match.url.indexOf('search') !== -1){
             this.sortFilmsBy(this.props.sortBy, films);
         }

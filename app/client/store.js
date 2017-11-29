@@ -4,4 +4,6 @@ import {rootReducer} from "./reducers/index";
 
 const middleware = applyMiddleware(thunk);
 
-export default createStore(rootReducer, middleware);
+export default (initialState) => {
+    return createStore(rootReducer, initialState, middleware)
+};

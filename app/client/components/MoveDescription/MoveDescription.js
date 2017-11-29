@@ -7,15 +7,18 @@ import { findFilm } from "../../actions/actions";
 class MoveDescription extends React.Component{
     constructor(props){
         super(props);
+        this.state = {query: ''};
     }
 
-    componentWillMount(){
-        this.requestUniqueFilm();
+    static fetchData(dispatch, match){
+        const id = match.params.query;
+        return dispatch(findFilm(id));
     }
 
-    componentWillUpdate(){
-        this.requestUniqueFilm();
-    }
+    // componentDidMount(){
+    //     this.requestUniqueFilm();
+    // }
+
 
     requestUniqueFilm(){
         console.log("movieDesc", this.props.match.params.query );
@@ -32,7 +35,7 @@ class MoveDescription extends React.Component{
                 runtime: info.runtime,
                 overview: info.overview,
                 genres: info.genres ? info.genres[0].name : 'indefined',
-                production_countrie: info.production_countries
+                production_countrie: (info.production_countries && info.production_countries.length)
                     ? info.production_countries[0].name
                     : 'indefined'
 
@@ -55,6 +58,10 @@ class MoveDescription extends React.Component{
     }
 
     render(){
+        if(this.props.match.params.query !== this.state.query){
+          this.setState({ query: this.props.match.params.query });
+          this.requestUniqueFilm();
+        }
         const info = this.props.info;
         const infoFilm = this.infoOfFilm(info);
         return (
